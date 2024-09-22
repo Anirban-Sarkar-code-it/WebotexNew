@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+#hero {
+    background: url('https://jbsoftware.ca/wp-content/uploads/web-design.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px; /* Add padding for smaller screens */
+}
+
+.cta {
+    background: #ff5722;
+    padding: 12px 24px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta:hover {
+    background: #e64a19; /* Darker shade on hover */
+}
+
+/* Specific styles for the "Register for Web Solution" button */
+.register-button {
+    margin-top: 15px; /* Add margin for spacing */
+}
+
+/* Other sections (services, about, testimonials, etc.) styles here... */
+
+#services, #about, #testimonials {
+    padding: 20px;
+}
+
+/* About Us Section */
+#about {
+    background-color: #fff; /* White background */
+    padding: 40px 20px; /* Add padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.about-content {
+    display: flex; /* Flex layout for text and graphics */
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: center; /* Center content */
+    text-align: center; /* Center text */
+}
+
+.about-text {
+    max-width: 800px; /* Limit text width */
+    margin-bottom: 20px; /* Space below text */
+}
+
+.about-graphics {
+    display: flex; /* Flex layout for icons */
+    justify-content: space-around; /* Space out icons */
+    width: 100%; /* Full width */
+}
+
+.about-graphics i {
+    font-size: 50px; /* Icon size */
+    color: #ff5722; /* Orange color */
+    margin: 20px; /* Space around icons */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.about-graphics i:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+    color: #e64a19; /* Darker shade on hover */
+}
+
+/* Services Section */
+#services {
+    background-color: #fff; /* White background for contrast */
+    padding: 40px 20px; /* Add more padding */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column size */
+    gap: 20px; /* Increase space between items */
+}
+
+/* Service Card Styles */
+.service-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Logo/Icon Styles */
+.service-card i {
+    font-size: 50px; /* Larger icons */
+    color: #ff5722; /* Orange color */
+    margin-bottom: 10px; /* Space below icon */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effects */
+.service-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+.service-card:hover i {
+    color: #e64a19; /* Darker shade on hover */
+}
+
+/* Mobile styles for service cards */
+@media (max-width: 768px) {
+    .service-card {
+        padding: 15px; /* Less padding on smaller screens */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .hero-content {
+        padding: 40px; /* Increase padding for smaller screens */
+    }
+
+    #application-form {
+        width: 90%; /* Make form width responsive */
+        margin: 20px auto; /* Center the form */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack content vertically */
+    }
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}

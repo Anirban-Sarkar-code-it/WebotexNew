@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Application Form | Webotex</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Anirban Sarkar"); // Replace with your User ID
+   })();
+</script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Webotex</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="application-form">
+        <h2>Client Application Form</h2>
+        <form id="clientForm">
+            <div class="form-group">
+                <label for="orgName">Organization Name:</label>
+                <input type="text" id="orgName" name="orgName" required>
+            </div>
+            <div class="form-group">
+                <label for="contactPerson">Contact Person:</label>
+                <input type="text" id="contactPerson" name="contactPerson" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="servicesNeeded">Services Needed:</label>
+                <textarea id="servicesNeeded" name="servicesNeeded" rows="4" required></textarea>
+            </div>
+            <!-- Round 2 -->
+            <div class="form-group">
+                <label for="additionalInfo">Additional Information:</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+            </div>
+            <!-- Round 3 -->
+            <div class="form-group">
+                <label for="projectTimeline">Project Timeline:</label>
+                <input type="text" id="projectTimeline" name="projectTimeline" required>
+            </div>
+            <!-- Round 4 -->
+            <div class="form-group">
+                <label for="budget">Budget Estimate:</label>
+                <input type="text" id="budget" name="budget" required>
+            </div>
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Webotex. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('clientForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Collecting form data
+            const orgName = document.getElementById('orgName').value;
+            const contactPerson = document.getElementById('contactPerson').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const servicesNeeded = document.getElementById('servicesNeeded').value;
+            const additionalInfo = document.getElementById('additionalInfo').value;
+            const projectTimeline = document.getElementById('projectTimeline').value;
+            const budget = document.getElementById('budget').value;
+
+            // Create PDF Receipt
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Adding receipt title
+            doc.setFontSize(20);
+            doc.text('Receipt', 10, 10);
+            doc.setFontSize(12);
+            doc.text('Thank you for your application!', 10, 20);
+            doc.text('Here are the details of your submission:', 10, 30);
+            doc.text('----------------------------------------', 10, 40);
+
+            // Adding content to the PDF
+            doc.text(`Organization Name: ${orgName}`, 10, 50);
+            doc.text(`Contact Person: ${contactPerson}`, 10, 60);
+            doc.text(`Email: ${email}`, 10, 70);
+            doc.text(`Phone Number: ${phone}`, 10, 80);
+            doc.text(`Services Needed: ${servicesNeeded}`, 10, 90);
+            doc.text(`Additional Information: ${additionalInfo}`, 10, 100);
+            doc.text(`Project Timeline: ${projectTimeline}`, 10, 110);
+            doc.text(`Budget Estimate: ${budget}`, 10, 120);
+
+            // Save the PDF
+            doc.save('client_receipt.pdf');
+
+            // Reset the form after submission
+            document.getElementById('clientForm').reset();
+        });
+    </script>
+</body>
+</html>

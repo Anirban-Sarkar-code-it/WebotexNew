@@ -188,59 +188,93 @@ nav a {
     }
 }
 /* Login Section Styles */
+/* Login Section Styles */
 #login {
-    background-color: #f9f9f9; /* Light background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Light background for contrast */
+    padding: 30px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     max-width: 400px; /* Set a max width */
     margin: 30px auto; /* Center the form */
     text-align: center; /* Center text */
+    position: relative; /* Position for the overlay effect */
+    overflow: hidden; /* Hide overflow for the gradient */
+}
+
+/* Gradient Overlay */
+#login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(0, 123, 255, 0.1)); /* Gradient effect */
+    z-index: 1; /* Layer behind the content */
 }
 
 #login h2 {
     margin-bottom: 20px;
     color: #333; /* Dark text color */
+    z-index: 2; /* Above the overlay */
+    position: relative; /* Layer above the overlay */
 }
 
 #login div {
     margin-bottom: 15px;
+    z-index: 2; /* Above the overlay */
+    position: relative; /* Layer above the overlay */
 }
 
 #login label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #555; /* Darker label color */
 }
 
 #login input[type="text"],
 #login input[type="password"] {
     width: 100%; /* Full width */
-    padding: 10px;
+    padding: 12px; /* More padding for a better touch target */
     border: 1px solid #ccc; /* Light border */
-    border-radius: 4px;
+    border-radius: 8px; /* Rounder corners */
     box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s; /* Transition effect */
+    z-index: 2; /* Above the overlay */
+}
+
+#login input[type="text"]:focus,
+#login input[type="password"]:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    outline: none; /* Remove default outline */
 }
 
 #login button {
     background-color: #007BFF; /* Bootstrap primary color */
     color: white; /* White text */
-    padding: 10px 15px;
+    padding: 12px 15px; /* More padding for better appearance */
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* Rounder corners */
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s; /* Transition effect */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effect */
+    position: relative; /* For the hover effect */
+    z-index: 2; /* Above the overlay */
 }
 
 #login button:hover {
     background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 #login #login-message {
     margin-top: 10px;
     color: red; /* Red text for error messages */
+    z-index: 2; /* Above the overlay */
+    position: relative; /* Layer above the overlay */
 }
+
 
 /* Footer Styles */
 footer {

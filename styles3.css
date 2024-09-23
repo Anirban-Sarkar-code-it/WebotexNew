@@ -1,117 +1,54 @@
-/* Consumer Details Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    color: #333;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffe600;
+}
+
 #consumer-info {
     max-width: 800px;
     margin: 30px auto;
-    padding: 30px;
-    background-color: #ffffff; /* White background for contrast */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: left;
-    position: relative; /* For the overlay effect */
-    overflow: hidden; /* Prevent overflow */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
 }
 
-/* Background Gradient */
-#consumer-info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(0, 123, 255, 0.1)); /* Gradient background */
-    z-index: 0; /* Behind the content */
-    opacity: 0.5; /* Slight transparency */
-}
-
-/* Hover Effect for Consumer Info */
-#consumer-info:hover {
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
-/* Info Card Styles */
-.info-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px; /* Increased padding */
-    margin-bottom: 20px;
-    position: relative; /* For the hover effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-/* Info Card Hover Effect */
-.info-card:hover {
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    border-color: #007BFF; /* Change border color on hover */
-}
-
-/* Info Card Heading Styles */
-.info-card h3 {
-    margin-bottom: 15px;
-    color: #333;
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-/* Info Card Heading Hover Effect */
-.info-card:hover h3 {
-    color: #007BFF; /* Change color on hover */
-}
-
-/* Info Card Content Styles */
-.info-card p {
-    color: #666; /* Lighter text color for paragraphs */
-    line-height: 1.5; /* Better readability */
-    transition: color 0.3s; /* Smooth transition for text */
-}
-
-.info-card:hover p {
-    color: #444; /* Darker text on hover */
-}
-
-/* Button Styles */
-button {
-    background-color: #007BFF; /* Primary color */
-    color: white;
-    padding: 12px 18px; /* Increased padding */
-    border: none;
-    border-radius: 8px; /* Rounder corners */
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transition effects */
-    position: relative; /* For hover effect */
-    z-index: 1; /* Above background */
-}
-
-/* Button Hover Effect */
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
-}
-
-/* Responsive Button Styles */
-button:focus {
-    outline: none; /* Remove focus outline */
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    #consumer-info {
-        padding: 20px; /* Less padding on smaller screens */
-    }
-
-    button {
-        width: 100%; /* Full width buttons on small screens */
-        margin-bottom: 10px; /* Spacing between buttons */
-    }
-}
-
-/* Additional Styles for Enhanced Graphics */
-
-/* Adding subtle animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -124,93 +61,98 @@ button:focus {
 }
 
 .info-card {
-    animation: fadeIn 0.5s ease; /* Apply animation to info cards */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Decorative Elements */
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h3 {
+    color: #007BFF;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.info-card:hover h3 {
+    color: #0056b3;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 .decorative-line {
-    height: 3px;
-    background: linear-gradient(90deg, #ff5722, #007BFF); /* Decorative gradient line */
-    margin: 20px 0; /* Margin for spacing */
+    height: 4px;
+    background: linear-gradient(90deg, #007BFF, #ffe600);
+    margin: 20px 0;
 }
 
-/* Card Image Styles */
-.info-card img {
-    max-width: 100%;
-    border-radius: 8px; /* Round corners for images */
-    margin-bottom: 15px; /* Space below images */
-    transition: transform 0.3s; /* Smooth image transition */
-}
-
-.info-card img:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-}
-
-/* Custom Scrollbar Styles */
-#consumer-info::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-}
-
-#consumer-info::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background of the scrollbar track */
-}
-
-#consumer-info::-webkit-scrollbar-thumb {
-    background: #007BFF; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for scrollbar thumb */
-}
-
-#consumer-info::-webkit-scrollbar-thumb:hover {
-    background: #0056b3; /* Darker thumb on hover */
-}
-
-/* Media Query for Large Screens */
-@media (min-width: 1200px) {
-    #consumer-info {
-        max-width: 900px; /* Wider for larger screens */
-    }
-
-    .info-card {
-        padding: 25px; /* Increase padding on larger screens */
-    }
-}
-
-/* Responsive Typography */
-h3 {
-    font-size: 1.8em; /* Larger font size for headings */
-}
-
-@media (max-width: 768px) {
-    h3 {
-        font-size: 1.5em; /* Smaller font size for mobile */
-    }
-}
-
-/* Enhanced Link Styles */
-a {
-    color: #007BFF; /* Primary link color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-a:hover {
-    color: #0056b3; /* Darker link color on hover */
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    background: #333; /* Footer background */
+    background: #333;
     color: #fff;
-    margin-top: 20px;
-    border-radius: 8px; /* Rounded footer */
+    position: relative;
+    z-index: 10;
 }
 
-/* Media Queries for Footer */
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: #ffe600;
+}
+
 @media (max-width: 768px) {
-    footer {
-        padding: 15px; /* Adjust padding for footer */
+    #consumer-info {
+        padding: 15px;
     }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+h2 {
+    color: #007BFF;
+    animation: bounce 1s infinite;
 }

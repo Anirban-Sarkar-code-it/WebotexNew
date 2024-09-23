@@ -91,5 +91,40 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <section id="login">
+    <h2>Login</h2>
+    <form id="login-form">
+        <div>
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <div id="login-message"></div>
+</section>
+
+<script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const userId = document.getElementById('user_id').value;
+        const password = document.getElementById('password').value;
+
+        // Dummy credentials for demonstration
+        const validUserId = 'admin';
+        const validPassword = 'password123';
+
+        if (userId === validUserId && password === validPassword) {
+            window.location.href = 'consumer-details.html'; // Redirect to consumer details page
+        } else {
+            document.getElementById('login-message').innerText = 'Invalid User ID or Password';
+        }
+    });
+</script>
+
 </body>
 </html>

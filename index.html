@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webotex - Web Support Company</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css"> <!-- Link to chatbot CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -19,69 +20,56 @@
             </ul>
         </nav>
     </header>
+
     <section id="login">
-    <h2>Login</h2>
-    <form id="login-form">
-        <div>
-            <label for="user_id">User ID:</label>
-            <input type="text" id="user_id" name="user_id" required>
+        <h2>Login</h2>
+        <form id="login-form">
+            <div>
+                <label for="user_id">User ID:</label>
+                <input type="text" id="user_id" name="user_id" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="login-message"></div>
+    </section>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const userId = document.getElementById('user_id').value;
+            const password = document.getElementById('password').value;
+
+            // Updated credentials
+            const validCredentials = {
+                'admin_2019': 'GU@12345',
+                'admin_2003': 'GU@anirban2019',
+                'client440': 'CL@12345'
+            };
+
+            if (validCredentials[userId] === password) {
+                window.location.href = `${userId}.html`; // Redirect based on user ID
+            } else {
+                document.getElementById('login-message').innerText = 'Invalid User ID or Password';
+            }
+        });
+    </script>
+
+    <!-- Chatbot UI -->
+    <div id="chatbot">
+        <div id="chatbot-header" onclick="toggleChatbot()">Chat with Us</div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="user-message" placeholder="Type your message..." />
+            <button id="send-button">Send</button>
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <div id="login-message"></div>
-</section>
-
-<script>
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const userId = document.getElementById('user_id').value;
-        const password = document.getElementById('password').value;
-
-        // Updated credentials
-        const validUserId = 'admin_2019';
-        const validPassword = 'GU@12345';
-
-        if (userId === validUserId && password === validPassword) {
-            window.location.href = 'consumer-details.html'; // Redirect to consumer details page
-        } else {
-            document.getElementById('login-message').innerText = 'Invalid User ID or Password';
-        }
-
-         const validUserId1 = 'admin_2003';
-        const validPassword1 = 'GU@anirban2019';
-
-        if (userId === validUserId1 && password === validPassword1) {
-            window.location.href = 'consumer-details1.html'; // Redirect to consumer details page
-        } else {
-            document.getElementById('login-message').innerText = 'Invalid User ID or Password';
-        }
-
-         const validUserId2 = 'client440';
-        const validPassword2 = 'CL@12345';
-
-        if (userId === validUserId2 && password === validPassword2) {
-            window.location.href = 'consumer-details2.html'; // Redirect to consumer details page
-        } else {
-            document.getElementById('login-message').innerText = 'Invalid User ID or Password';
-        }
-    });
-</script>
-<!-- Chatbot UI -->
-<div id="chatbot">
-    <div id="chatbot-header" onclick="toggleChatbot()">Chat with Us</div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input">
-        <input type="text" id="user-message" placeholder="Type your message..." />
-        <button id="send-button">Send</button>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script> <!-- Ensure this path is correct -->
 
     <section id="hero">
         <div class="hero-content">
@@ -91,6 +79,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFZoRqIKGgFLPZBPFBkP2UIUowlfzwr1Zpf9fEKoLtR5cZBA/viewform?usp=sf_link" class="cta" target="_blank">Register for Web Solution</a>
         </div>
     </section>
+
     <section id="services">
         <h2>Our Services</h2>
         <div class="service-grid">
@@ -110,35 +99,24 @@
                 <p>Strategies to grow your online presence.</p>
             </div>
         </div>
-        <a href="#home"><i class="fas fa-home"></i> Home</a>
-        <nav>
-    <a href="index.html">Home</a>
-    <a href="web-development.html">Web Development</a>
-    <a href="seo-optimization.html">SEO Optimization</a>
-    <a href="#contact">Contact</a>
-</nav>
-
     </section>
-        </div>
-        <section id="about">
-    <h2>About Us</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p><strong>Welcome to Webotex</strong>, where innovation meets technology. We are dedicated to providing top-notch web solutions to empower businesses and enhance their digital presence. With years of experience, our team of experts excels in web development, SEO, and digital marketing strategies tailored to meet your unique needs.</p>
-            <p>At Webotex, we understand that a strong online presence is crucial in today’s digital age. Our mission is to help businesses thrive by delivering high-quality services that drive growth and increase visibility. We pride ourselves on our commitment to excellence and customer satisfaction.</p>
-            <p>Our talented team is passionate about technology and continually stays updated with the latest trends in web design and development. Whether you're a small startup or an established corporation, we have the tools and expertise to help you succeed online.</p>
-            <p>Join us in transforming your digital landscape and achieving your business goals. Let’s work together to create something extraordinary!</p>
-        </div>
-        <div class="about-graphics">
-            <i class="fas fa-laptop-code"></i>
-            <i class="fas fa-search"></i>
-            <i class="fas fa-bullhorn"></i>
-            <i class="fas fa-users"></i>
-        </div>
-    </div>
-</section>
 
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>Welcome to Webotex</strong>, where innovation meets technology. We are dedicated to providing top-notch web solutions to empower businesses and enhance their digital presence.</p>
+                <p>Join us in transforming your digital landscape and achieving your business goals!</p>
+            </div>
+            <div class="about-graphics">
+                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bullhorn"></i>
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
     </section>
+
     <section id="testimonials">
         <h2>What Our Clients Say</h2>
         <div class="testimonial-card">
@@ -146,6 +124,7 @@
             <span>- Client Name</span>
         </div>
     </section>
+
     <footer>
         <p>&copy; 2023 Webotex. All rights reserved.</p>
         <div class="social-media">
@@ -153,6 +132,5 @@
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

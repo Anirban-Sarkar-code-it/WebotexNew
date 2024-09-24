@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Details - Webotex</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Consumer Details</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="apply.html">Logout</a>
+        </nav>
+    </header>
+
+    <section id="consumer-info">
+        <h2>Welcome, Admin_2003</h2>
+        <div class="info-card">
+            <h3>User Information</h3>
+            <p><strong>User ID:</strong> admin_2003</p>
+            <p><strong>Email:</strong> anirbansarkarbtechcse@gmail.com</p>
+            <p><strong>Account Created:</strong> January 1, 2019</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Account Details</h3>
+            <p><strong>Status:</strong> Active</p>
+            <p><strong>Membership Level:</strong> Premium</p>
+            <p><strong>Last Login:</strong> September 24, 2024</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Actions</h3>
+            <button onclick="editProfile()">Edit Profile</button>
+            <button onclick="viewHistory()">View Purchase History</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Webotex. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function editProfile() {
+            alert('Redirecting to the profile edit page...');
+            // window.location.href = 'edit-profile.html'; // Uncomment this line when the edit page is available
+        }
+
+        function viewHistory() {
+            alert('Redirecting to the purchase history page...');
+            // window.location.href = 'purchase-history.html'; // Uncomment this line when the history page is available
+        }
+    </script>
+</body>
+</html>

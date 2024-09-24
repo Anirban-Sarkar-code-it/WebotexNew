@@ -39,6 +39,45 @@
         </div>
 
         <div class="decorative-line"></div>
+
+        <!-- New Grievance Form Section -->
+        <div class="info-card" id="grievance-form">
+            <h3>Submit a Grievance</h3>
+            <form id="form">
+                <label for="issue">Issue:</label>
+                <textarea id="issue" rows="4" required></textarea>
+                <label for="contact">Your Contact:</label>
+                <input type="text" id="contact" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- List of Features Section -->
+        <div class="info-card">
+            <h3>Features</h3>
+            <ul>
+                <li>User-friendly dashboard</li>
+                <li>24/7 customer support</li>
+                <li>Secure transactions</li>
+                <li>Real-time notifications</li>
+                <li>Exclusive member discounts</li>
+            </ul>
+        </div>
+
+        <!-- Account Statement Section -->
+        <div class="info-card">
+            <h3>Account Statement</h3>
+            <p><strong>Total Spent:</strong> $500</p>
+            <p><strong>Last Payment Date:</strong> September 15, 2024</p>
+            <p><strong>Pending Payments:</strong> None</p>
+        </div>
+
+        <!-- Credentials Section -->
+        <div class="info-card">
+            <h3>Account Credentials</h3>
+            <p><strong>Password:</strong> ******** (Reset <a href="#">here</a>)</p>
+            <p><strong>Two-Factor Authentication:</strong> Enabled</p>
+        </div>
     </section>
 
     <footer>
@@ -57,6 +96,13 @@
         function viewHistory() {
             alert('Redirecting to the purchase history page...');
         }
+
+        document.getElementById('form').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Grievance submitted successfully!');
+            // Optionally, you can reset the form here
+            this.reset();
+        };
     </script>
 </body>
 </html>

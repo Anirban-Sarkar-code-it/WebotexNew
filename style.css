@@ -87,7 +87,7 @@ nav a {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 500px;
-    margin: auto;
+    margin: 20px auto; /* Centering */
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -109,7 +109,7 @@ label {
 input[type="text"],
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Increased padding for touch targets */
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border 0.3s ease;
@@ -123,7 +123,7 @@ textarea:focus {
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Increased padding for better touch target */
     background-color: #007bff;
     color: white;
     border: none;
@@ -263,18 +263,24 @@ button:hover {
     }
 
     .cta {
-        font-size: 16px; /* Adjust font size for better readability */
+        width: 100%; /* Full width on mobile */
     }
 
-    /* Additional touch target improvements */
-    button, .cta {
-        padding: 15px; /* Increase padding for touch targets */
-        font-size: 18px; /* Larger font size for readability */
+    #feedback {
+        padding: 15px; /* Reduce padding on mobile */
+        width: 90%; /* Make feedback form width responsive */
     }
 
+    /* Adjust text input and button sizes */
     input[type="text"],
     textarea {
-        padding: 12px; /* Increase padding for better touch interaction */
+        padding: 15px; /* Increase padding for touch interaction */
+        font-size: 16px; /* Larger font size for readability */
+    }
+
+    button {
+        padding: 15px; /* Larger button size */
+        font-size: 18px; /* Adjust font size for better readability */
     }
 
     h2 {
@@ -375,24 +381,4 @@ footer {
     background: #333;
     color: #fff;
     margin-top: 20px;
-}
-
-/* Additional Mobile Styles */
-@media (max-width: 576px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cta {
-        width: 100%; /* Full width on mobile */
-    }
-
-    #login {
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 22px; /* Adjust for smaller screens */
-    }
 }

@@ -23,13 +23,13 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: auto;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -55,7 +55,7 @@ nav a {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 20px; /* Add padding for smaller screens */
+    padding: 20px;
 }
 
 .cta {
@@ -69,14 +69,14 @@ nav a {
 }
 
 .cta:hover {
-    background: #e64a19; /* Darker shade on hover */
+    background: #e64a19;
 }
 
 .register-button {
-    margin-top: 15px; /* Add margin for spacing */
+    margin-top: 15px;
 }
 
-/* Other sections (services, about, testimonials, etc.) styles here... */
+/* Section Styles */
 #services, #about, #testimonials {
     padding: 20px;
 }
@@ -155,51 +155,51 @@ button:hover {
 
 /* About Us Section */
 #about {
-    background-color: #fff; /* White background */
-    padding: 40px 20px; /* Add padding */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff;
+    padding: 40px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-content {
-    display: flex; /* Flex layout for text and graphics */
-    flex-direction: column; /* Stack on smaller screens */
-    align-items: center; /* Center content */
-    text-align: center; /* Center text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .about-text {
-    max-width: 800px; /* Limit text width */
-    margin-bottom: 20px; /* Space below text */
+    max-width: 800px;
+    margin-bottom: 20px;
 }
 
 .about-graphics {
-    display: flex; /* Flex layout for icons */
-    justify-content: space-around; /* Space out icons */
-    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .about-graphics i {
-    font-size: 50px; /* Icon size */
-    color: #ff5722; /* Orange color */
-    margin: 20px; /* Space around icons */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    font-size: 50px;
+    color: #ff5722;
+    margin: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .about-graphics i:hover {
-    transform: scale(1.2); /* Scale effect on hover */
-    color: #e64a19; /* Darker shade on hover */
+    transform: scale(1.2);
+    color: #e64a19;
 }
 
 /* Services Section */
 #services {
-    background-color: #fff; /* White background for contrast */
-    padding: 40px 20px; /* Add more padding */
+    background-color: #fff;
+    padding: 40px 20px;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column size */
-    gap: 20px; /* Increase space between items */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 /* Service Card Styles */
@@ -209,73 +209,92 @@ button:hover {
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Logo/Icon Styles */
 .service-card i {
-    font-size: 50px; /* Larger icons */
-    color: #ff5722; /* Orange color */
-    margin-bottom: 10px; /* Space below icon */
-    transition: color 0.3s ease; /* Smooth color transition */
+    font-size: 50px;
+    color: #ff5722;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 /* Hover Effects */
 .service-card:hover {
-    transform: translateY(-10px); /* Lift effect */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Darker shadow */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .service-card:hover i {
-    color: #e64a19; /* Darker shade on hover */
-}
-
-/* Mobile styles for service cards */
-@media (max-width: 768px) {
-    .service-card {
-        padding: 15px; /* Less padding on smaller screens */
-    }
+    color: #e64a19;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-content {
-        padding: 40px; /* Increase padding for smaller screens */
+        padding: 40px;
     }
 
     #application-form {
-        width: 90%; /* Make form width responsive */
-        margin: 20px auto; /* Center the form */
+        width: 90%;
+        margin: 20px auto;
     }
 
     .about-content {
-        flex-direction: column; /* Stack content vertically */
+        flex-direction: column;
     }
 
     #services {
-        padding: 20px 10px; /* Adjust padding */
+        padding: 20px 10px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Stack service cards on small screens */
+    }
+
+    #login {
+        padding: 20px; /* Adjust padding for smaller devices */
+    }
+
+    .cta {
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+
+    /* Additional touch target improvements */
+    button, .cta {
+        padding: 15px; /* Increase padding for touch targets */
+        font-size: 18px; /* Larger font size for readability */
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 12px; /* Increase padding for better touch interaction */
+    }
+
+    h2 {
+        font-size: 24px; /* Increase heading size for better visibility */
     }
 }
 
 /* Login Section Styles */
 #login {
-    background-color: #ffffff; /* Light background for contrast */
+    background-color: #ffffff;
     padding: 30px;
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    max-width: 400px; /* Set a max width */
-    margin: 30px auto; /* Center the form */
-    text-align: center; /* Center text */
-    position: relative; /* Position for the overlay effect */
-    overflow: hidden; /* Hide overflow for the gradient */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Gradient Overlay */
 #login::before {
     content: '';
     position: absolute;
@@ -283,70 +302,70 @@ button:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(0, 123, 255, 0.1)); /* Gradient effect */
-    z-index: 1; /* Layer behind the content */
+    background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(0, 123, 255, 0.1));
+    z-index: 1;
 }
 
 #login h2 {
     margin-bottom: 20px;
-    color: #333; /* Dark text color */
-    z-index: 2; /* Above the overlay */
-    position: relative; /* Layer above the overlay */
+    color: #333;
+    z-index: 2;
+    position: relative;
 }
 
 #login div {
     margin-bottom: 15px;
-    z-index: 2; /* Above the overlay */
-    position: relative; /* Layer above the overlay */
+    z-index: 2;
+    position: relative;
 }
 
 #login label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #555; /* Darker label color */
+    color: #555;
 }
 
 #login input[type="text"],
 #login input[type="password"] {
-    width: 100%; /* Full width */
-    padding: 12px; /* More padding for a better touch target */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 8px; /* Rounder corners */
-    box-sizing: border-box; /* Include padding in width */
-    transition: border-color 0.3s; /* Transition effect */
-    z-index: 2; /* Above the overlay */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    z-index: 2;
 }
 
 #login input[type="text"]:focus,
 #login input[type="password"]:focus {
-    border-color: #007BFF; /* Blue border on focus */
-    outline: none; /* Remove default outline */
+    border-color: #007BFF;
+    outline: none;
 }
 
 #login button {
-    background-color: #007BFF; /* Bootstrap primary color */
-    color: white; /* White text */
-    padding: 12px 15px; /* More padding for better appearance */
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 15px;
     border: none;
-    border-radius: 8px; /* Rounder corners */
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s; /* Transition effect */
-    position: relative; /* For the hover effect */
-    z-index: 2; /* Above the overlay */
+    transition: background-color 0.3s, transform 0.2s;
+    position: relative;
+    z-index: 2;
 }
 
 #login button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 #login #login-message {
     margin-top: 10px;
-    color: red; /* Red text for error messages */
-    z-index: 2; /* Above the overlay */
-    position: relative; /* Layer above the overlay */
+    color: red;
+    z-index: 2;
+    position: relative;
 }
 
 /* Footer Styles */
@@ -362,18 +381,18 @@ footer {
 @media (max-width: 576px) {
     nav ul {
         flex-direction: column;
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr; /* Single column layout on mobile */
-    }
-
-    #login {
-        padding: 20px; /* Adjust padding for smaller devices */
+        align-items: center;
     }
 
     .cta {
-        font-size: 16px; /* Adjust font size for better readability */
+        width: 100%; /* Full width on mobile */
+    }
+
+    #login {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px; /* Adjust for smaller screens */
     }
 }

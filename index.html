@@ -52,6 +52,24 @@
         } else {
             document.getElementById('login-message').innerText = 'Invalid User ID or Password';
         }
+         const validUserId1 = 'admin_2003';
+        const validPassword1 = 'GU@anirban2019';
+
+        if (userId === validUserId1 && password === validPassword1) {
+            window.location.href = 'consumer-details1.html'; // Redirect to consumer details page
+        } else {
+            document.getElementById('login-message').innerText = 'Invalid User ID or Password';
+        }
+
+         const validUserId2 = 'client440';
+        const validPassword2 = 'CL@12345';
+
+        if (userId === validUserId2 && password === validPassword2) {
+            window.location.href = 'consumer-details2.html'; // Redirect to consumer details page
+        } else {
+            document.getElementById('login-message').innerText = 'Invalid User ID or Password';
+        }
+    });
     });
 </script>
 

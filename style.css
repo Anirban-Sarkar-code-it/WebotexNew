@@ -72,19 +72,13 @@ nav a {
     background: #e64a19; /* Darker shade on hover */
 }
 
-/* Specific styles for the "Register for Web Solution" button */
 .register-button {
     margin-top: 15px; /* Add margin for spacing */
 }
 
 /* Other sections (services, about, testimonials, etc.) styles here... */
-
 #services, #about, #testimonials {
     padding: 20px;
-}
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
 }
 
 #feedback {
@@ -158,7 +152,6 @@ button:hover {
         opacity: 1;
     }
 }
-
 
 /* About Us Section */
 #about {
@@ -263,8 +256,12 @@ button:hover {
     .about-content {
         flex-direction: column; /* Stack content vertically */
     }
+
+    #services {
+        padding: 20px 10px; /* Adjust padding */
+    }
 }
-/* Login Section Styles */
+
 /* Login Section Styles */
 #login {
     background-color: #ffffff; /* Light background for contrast */
@@ -352,7 +349,6 @@ button:hover {
     position: relative; /* Layer above the overlay */
 }
 
-
 /* Footer Styles */
 footer {
     text-align: center;
@@ -360,4 +356,24 @@ footer {
     background: #333;
     color: #fff;
     margin-top: 20px;
+}
+
+/* Additional Mobile Styles */
+@media (max-width: 576px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+
+    #login {
+        padding: 20px; /* Adjust padding for smaller devices */
+    }
+
+    .cta {
+        font-size: 16px; /* Adjust font size for better readability */
+    }
 }

@@ -82,6 +82,67 @@ nav a {
 #services, #about, #testimonials {
     padding: 20px;
 }
+#feedback {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#feedback:hover {
+    transform: scale(1.02);
+}
+
+#feedback h2 {
+    text-align: center;
+    color: #333;
+}
+
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#feedback-form div {
+    margin-bottom: 15px;
+}
+
+#feedback-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#feedback-form input, #feedback-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#feedback-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#feedback-form button:hover {
+    background-color: #0056b3;
+}
+
+#feedback-message {
+    text-align: center;
+    color: green;
+    margin-top: 10px;
+}
+
 
 /* About Us Section */
 #about {

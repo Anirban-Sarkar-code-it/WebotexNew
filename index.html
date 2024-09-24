@@ -7,6 +7,87 @@
     <title>Webotex - Web Support Company</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webotex - Web Support Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Chatbot Styles */
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Initially hidden */
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        #chatbot-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background: #f1f1f1;
+            color: black;
+            align-self: flex-start;
+        }
+
+        #chatbot-input {
+            display: flex;
+            padding: 10px;
+        }
+
+        #chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        #chatbot-input button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #chatbot-input button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -72,6 +153,155 @@
         }
     });
 </script>
+    <body>
+    <header>
+        <nav>
+            <h1>Webotex</h1>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="apply.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div>
+                <label for="user_id">User ID:</label>
+                <input type="text" id="user_id" name="user_id" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="login-message"></div>
+    </section>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Empowering Your Digital Presence</h2>
+            <p>Expert Web Support for Your Business Needs</p>
+            <a href="apply.html" class="cta">Get Started</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFZoRqIKGgFLPZBPFBkP2UIUowlfzwr1Zpf9fEKoLtR5cZBA/viewform?usp=sf_link" class="cta" target="_blank">Register for Web Solution</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <li><a href="web-development.html">Web Development</a></li>
+                <p>Building responsive and scalable web applications.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-search"></i>
+                <h3>SEO Services</h3>
+                <p>Optimizing your website for better visibility.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Strategies to grow your online presence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>Welcome to Webotex</strong>, where innovation meets technology...</p>
+            </div>
+            <div class="about-graphics">
+                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bullhorn"></i>
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-card">
+            <p>"Webotex transformed our online presence!"</p>
+            <span>- Client Name</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Webotex. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <!-- Chatbot UI -->
+    <div id="chatbot">
+        <div id="chatbot-header" onclick="toggleChatbot()">Chat with Us</div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="user-message" placeholder="Type your message..." />
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Chatbot
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'block' : 'none';
+        }
+
+        // Send Message to Chatbot
+        document.getElementById('send-button').addEventListener('click', function() {
+            const userMessage = document.getElementById('user-message').value;
+            if (userMessage.trim() === '') return;
+
+            // Display user message
+            displayMessage(userMessage, 'user');
+
+            // Clear input
+            document.getElementById('user-message').value = '';
+
+            // Simulate bot response (replace with actual API call in production)
+            setTimeout(() => {
+                const botResponse = getBotResponse(userMessage);
+                displayMessage(botResponse, 'bot');
+            }, 1000);
+        });
+
+        // Display messages
+        function displayMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message ' + (type === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.innerText = message;
+
+            document.getElementById('chatbot-messages').appendChild(messageDiv);
+            document.getElementById('chatbot-messages').scrollTop = document.getElementById('chatbot-messages').scrollHeight;
+        }
+
+        // Simulated bot response (placeholder logic)
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+                return 'Hello! How can I assist you today?';
+            } else if (lowerMessage.includes('services')) {
+                return 'We offer Web Development, SEO Services, and Digital Marketing.';
+            } else if (lowerMessage.includes('contact')) {
+                return 'You can contact us via the form on our website!';
+            } else {
+                return 'I am sorry, but I did not understand that.';
+            }
+        }
+    </script>
     <section id="hero">
         <div class="hero-content">
             <h2>Empowering Your Digital Presence</h2>

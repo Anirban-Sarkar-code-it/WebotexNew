@@ -20,6 +20,45 @@ document.addEventListener("DOMContentLoaded", function() {
     // Clear the form
     this.reset();
 });
+// Chatbot Functionality
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbot');
+    chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'block' : 'none';
+}
+
+// Send Message to Chatbot
+document.getElementById('send-button').addEventListener('click', function() {
+    const userMessage = document.getElementById('user-message').value;
+    if (userMessage.trim() === '') return;
+
+    // Display user message
+    displayMessage(userMessage, 'user');
+
+    // Clear input
+    document.getElementById('user-message').value = '';
+
+    // Simulate bot response (replace with actual API call in production)
+    setTimeout(() => {
+        const botResponse = getBotResponse(userMessage);
+        displayMessage(botResponse, 'bot');
+    }, 1000);
+});
+
+// Display messages
+function displayMessage(message, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message ' + (type === 'user' ? 'user-message' : 'bot-message');
+    messageDiv.innerText = message;
+
+    document.getElementById('chatbot-messages').appendChild(messageDiv);
+    document.getElementById('chatbot-messages').scrollTop = document.getElementById('chatbot-messages').scrollHeight;
+}
+
+// Simulated bot response (placeholder logic)
+function getBotResponse(userMessage) {
+    // Simple response logic for demonstration purposes
+    return "You said: " + userMessage; // Replace this with your logic or API call
+}
 
 
     // Smooth scrolling for navigation links

@@ -35,7 +35,7 @@
     </form>
     <div id="login-message"></div>
 </section>
-
+</div>
 <script>
     document.getElementById('login-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -52,6 +52,7 @@
         } else {
             document.getElementById('login-message').innerText = 'Invalid User ID or Password';
         }
+
          const validUserId1 = 'admin_2003';
         const validPassword1 = 'GU@anirban2019';
 
@@ -70,9 +71,7 @@
             document.getElementById('login-message').innerText = 'Invalid User ID or Password';
         }
     });
-    });
 </script>
-
     <section id="hero">
         <div class="hero-content">
             <h2>Empowering Your Digital Presence</h2>
